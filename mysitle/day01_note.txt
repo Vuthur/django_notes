@@ -1,0 +1,39 @@
+setting介绍
+
+debug = true
+    开发模式, 在页面中可以看到详细的错误信息;
+    代码修改后, 自动重启服务, 及时生效.
+    如果项目中没有自己的页面时, 会有默认的测试页面
+debug = false
+    生产模式, 在页面中了看不到详细错误信息;
+    代码修改后, 服务需要手动重启.(防止黑客攻击);
+    没有默认的测试页面
+
+ALLOWED_HOSTS = []
+    # 项目服务器IP地址
+    # True: 开发者模式, 默认值有两项, localhost 与127.0.0.1
+    # false:生产模式, 没有默认值的IP地址, 一般设置为公司IP
+
+python3 manage.py runserver 0.0.0.0 8000 (类似于udp的bind设置)
+    表示任意ip地址加上端口8000都可以访问到该网页
+
+Application definition
+    INSTALLED_APPS
+    项目应用的注册(待介绍)
+
+    MIDDLEWARE
+    用户注册中间件(待介绍)
+
+    ROOT_URLCONF
+    项目的主路由文件配置(告诉项目的主路由位置)
+
+    TEMPLATES
+    模板文件, 模板页的配置项
+
+DATABASES
+     数据库相关配置(sqlite3 嵌入式数据库 可以配置为mysql)
+
+LANGUAGE_CODE
+    语言("zh-Hans") 中文 默认:英语(美式)
+TIME_ZONE
+    时区("Asia/Shanghai") 亚洲上海  默认:格林威治时间(国际标准时间)
